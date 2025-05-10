@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="icon" type="image/png" href="/d/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/d/favicon.svg" />
     <link rel="shortcut icon" href="/d/favicon.ico" />
@@ -14,48 +14,42 @@
     <title>САЙТ КРУТОЙ</title>
 
     <style>
-      /* Стили для фонового видео */
-      #bg-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        pointer-events: none;
-        /* Можно добавить свойство для постепенной загрузки */
-        preload: auto;
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
       }
 
-      /* Элемент для затемнения и блюра */
-      #bg-overlay {
+      body {
+        position: relative;
+        font-family: sans-serif;
+      }
+
+      .background-gif {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Затемнение (полупрозрачный чёрный) */
-        backdrop-filter: blur(10px); /* Регулируемый блюр */
-        z-index: -1;
-        pointer-events: none;
+        background-image: url("https://i.giphy.com/swhmKttDTr6s0hTsmd.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+        filter: blur(5px); /* только блюр, без затемнения */
+      }
+
+      #root {
+        position: relative;
+        z-index: 0;
       }
     </style>
-    <script type="module" crossorigin src="/d/assets/index-dRK0FAvs.js"></script>
-    <link rel="stylesheet" crossorigin href="/d/assets/index-gnWq3Sem.css">
+    <script type="module" crossorigin src="/d/assets/index-CxuugzDo.js"></script>
+    <link rel="stylesheet" crossorigin href="/d/assets/index-L6xu5Xtn.css">
   </head>
+
   <body>
-    <!-- Фоновое видео с автозапуском и мутацией звука -->
-    <video id="bg-video" autoplay muted loop playsinline preload="auto">
-      <source src="/imKPXhvMp8Y.webm" type="video/webm" />
-      <!-- Если видео в другом формате, можно добавить fallback -->
-      <source src="/imKPXhvMp8Y.mp4" type="video/mp4" />
-    </video>
-
-    <!-- Overlay для затемнения и блюра -->
-    <div id="bg-overlay"></div>
-
-    <!-- Контейнер для React -->
+    <div class="background-gif"></div>
     <div id="root"></div>
 
   </body>
