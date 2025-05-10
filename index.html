@@ -12,10 +12,31 @@
     <link rel="manifest" href="/d/site.webmanifest" />
 
     <title>САЙТ КРУТОЙ</title>
-    <script type="module" crossorigin src="/d/assets/index-BE5JZHxQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/d/assets/index-IG1A4Tw2.css">
+
+    <style>
+      /* Стили для фонового видео */
+      #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+    <script type="module" crossorigin src="/d/assets/index-dRK0FAvs.js"></script>
+    <link rel="stylesheet" crossorigin href="/d/assets/index-gnWq3Sem.css">
   </head>
   <body>
+    <!-- Фоновое видео -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="/d/background.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Контейнер для React -->
     <div id="root"></div>
+
   </body>
 </html>
