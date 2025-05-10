@@ -24,16 +24,36 @@
         object-fit: cover;
         z-index: -1;
         pointer-events: none;
+        /* Можно добавить свойство для постепенной загрузки */
+        preload: auto;
+      }
+
+      /* Элемент для затемнения и блюра */
+      #bg-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Затемнение (полупрозрачный чёрный) */
+        backdrop-filter: blur(10px); /* Регулируемый блюр */
+        z-index: -1;
+        pointer-events: none;
       }
     </style>
     <script type="module" crossorigin src="/d/assets/index-dRK0FAvs.js"></script>
     <link rel="stylesheet" crossorigin href="/d/assets/index-gnWq3Sem.css">
   </head>
   <body>
-    <!-- Фоновое видео -->
-    <video id="bg-video" autoplay muted loop playsinline>
-      <source src="/d/background.mp4" type="video/mp4" />
+    <!-- Фоновое видео с автозапуском и мутацией звука -->
+    <video id="bg-video" autoplay muted loop playsinline preload="auto">
+      <source src="/imKPXhvMp8Y.webm" type="video/webm" />
+      <!-- Если видео в другом формате, можно добавить fallback -->
+      <source src="/imKPXhvMp8Y.mp4" type="video/mp4" />
     </video>
+
+    <!-- Overlay для затемнения и блюра -->
+    <div id="bg-overlay"></div>
 
     <!-- Контейнер для React -->
     <div id="root"></div>
